@@ -5,7 +5,7 @@ import os
 
 
 def main():
-    file = "yolo11n.onnx"
+    file = "yolo11s.onnx"
     if not os.path.exists(file):
         print(f"Not exist path: {file}")
         return 1
