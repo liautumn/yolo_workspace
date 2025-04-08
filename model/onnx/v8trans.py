@@ -4,8 +4,7 @@ import sys
 import os
 
 
-def main():
-    file = "yolo11s.onnx"
+def main(file):
     if not os.path.exists(file):
         print(f"Not exist path: {file}")
         return 1
@@ -44,4 +43,4 @@ def main():
 
 
 if __name__ == "__main__":
-    sys.exit(main())
+    sys.exit(main("yolo11s.dynamic.onnx"))
