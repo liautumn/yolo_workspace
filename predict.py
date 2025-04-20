@@ -2,14 +2,14 @@ from ultralytics import YOLO
 
 if __name__ == '__main__':
     # Load a pretrained YOLO11n model
-    model = YOLO("/home/autumn/Documents/ultralytics/yolo_workspace/model/pt/yolo11s.pt")
+    model = YOLO(r"D:\autumn\Documents\GitHub\ultralytics\yolo_workspace\model\pt\yolo11s-cls.pt")
     # Run inference on 'bus.jpg' with arguments
     results = model.predict(
         # source="/media/autumn/新加卷/现场识别错误数据_1",  # 指定推理的数据源。可以是图像路径、视频文件、目录、URL 或用于实时馈送的设备 ID。
-        source="/home/autumn/Documents/GitHub/tensorrt/workspace/images/000000115870.jpg",  # 指定推理的数据源。可以是图像路径、视频文件、目录、URL 或用于实时馈送的设备 ID。
+        source=r"D:\autumn\Documents\GitHub\ultralytics\ultralytics\assets\bus.jpg",  # 指定推理的数据源。可以是图像路径、视频文件、目录、URL 或用于实时馈送的设备 ID。
         conf=0.2,  # 设置检测的最小置信度阈值。如果检测到的对象置信度低于此阈值，则将不予考虑。调整该值有助于减少误报。
         iou=0.5,  # 非最大抑制 (NMS) 的交叉重叠 (IoU) 阈值。较低的数值可以消除重叠的方框，从而减少检测次数，这对减少重复检测非常有用。
-        imgsz=1024,  # 定义用于推理的图像大小。可以是一个整数（如 320）或一个（高度、宽度）元组。适当调整大小可以提高检测效率、精确度和处理速度。
+        imgsz=640,  # 定义用于推理的图像大小。可以是一个整数（如 320）或一个（高度、宽度）元组。适当调整大小可以提高检测效率、精确度和处理速度。
         half=False,  # 是否启用半精度（FP16）推理，可加快支持的 GPU 上的模型推理速度，同时将对精度的影响降至最低。
         device=0,  # 指定用于推理的设备（例如：`cpu`, `cuda:0` 或 `0`）。允许用户选择 CPU、特定 GPU 或其他计算设备执行模型。
         batch=1,  # 指定推理的批量大小（仅当来源为目录、视频文件或 .txt 文件）。更大的批次规模可以提供更高的吞吐量，缩短推理所需的总时间。

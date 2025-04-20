@@ -43,4 +43,4 @@ def main(file):
 
 
 if __name__ == "__main__":
-    sys.exit(main("yolo11s.dynamic.onnx"))
+    sys.exit(main("yolo11s.onnx"))
