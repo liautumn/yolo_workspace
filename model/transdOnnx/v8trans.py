@@ -38,9 +38,9 @@ def main(file):
     )
 
     print(f"Model save to {dst}")
-    onnx.save(model, "../transdOnnx/" + dst)
+    onnx.save(model, dst)
     return 0
 
 
 if __name__ == "__main__":
-    sys.exit(main("../onnx/yolo11s-seg.onnx"))
+    sys.exit(main("../onnx/rtdetr-l.onnx"))
