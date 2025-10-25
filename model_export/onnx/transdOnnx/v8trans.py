@@ -43,4 +43,4 @@ def main(file):
 
 
 if __name__ == "__main__":
-    sys.exit(main("../onnx/rtdetr-l.onnx"))
+    sys.exit(main(r"D:\autumn\Documents\GitHub\ultralytics\ultralytics\yolo_workspace\train_output\bird\train\train02\weights\best.onnx"))
