@@ -2,11 +2,11 @@ from ultralytics import YOLO
 
 if __name__ == '__main__':
     # Load a model
-    model = YOLO(r"D:\autumn\Documents\JetBrainsProjects\PycharmProjects\Yolo11\runs\detect\train\weights\best.pt")  # load a custom model
+    model = YOLO(r"")  # load a custom model
 
     # Validate the model
     validation_results = model.val(
-        data=r"D:\autumn\Documents\JetBrainsProjects\PycharmProjects\Yolo11\训练数据\FaceDetection\data.yaml",  # 指定数据集配置文件的路径（如 coco8.yaml）。该文件包括指向训练和验证数据的路径、类名和类数。
+        data=r"",  # 指定数据集配置文件的路径（如 coco8.yaml）。该文件包括指向训练和验证数据的路径、类名和类数。
         imgsz=640,  # 定义输入图像的尺寸。所有图像在处理前都会调整到这一尺寸。
         batch=64,  # 设置每批图像的数量。使用 -1 的自动批处理功能，它会根据 GPU 内存可用性自动调整。
         save_json=True,  # 如果为 True，将结果保存到 JSON 文件中，以便进一步分析或与其他工具集成。

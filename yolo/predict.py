@@ -2,11 +2,10 @@ from ultralytics import YOLO
 
 if __name__ == '__main__':
     # Load a pretrained YOLO11n model
-    model = YOLO(r"D:\autumn\Documents\GitHub\ultralytics\ultralytics\yolo_workspace\train_output\bird\train\train02\weights\best.pt")
+    model = YOLO(r"")
     # Run inference on 'bus.jpg' with arguments
     results = model.predict(
-        # source="/media/autumn/新加卷/现场识别错误数据_1",  # 指定推理的数据源。可以是图像路径、视频文件、目录、URL 或用于实时馈送的设备 ID。
-        source=r"D:\autumn\Downloads\birds.mp4",  # 指定推理的数据源。可以是图像路径、视频文件、目录、URL 或用于实时馈送的设备 ID。
+        source=r"",  # 指定推理的数据源。可以是图像路径、视频文件、目录、URL 或用于实时馈送的设备 ID。
         conf=0.267,  # 设置检测的最小置信度阈值。如果检测到的对象置信度低于此阈值，则将不予考虑。调整该值有助于减少误报。
         iou=0.5,  # 非最大抑制 (NMS) 的交叉重叠 (IoU) 阈值。较低的数值可以消除重叠的方框，从而减少检测次数，这对减少重复检测非常有用。
         imgsz=640,  # 定义用于推理的图像大小。可以是一个整数（如 320）或一个（高度、宽度）元组。适当调整大小可以提高检测效率、精确度和处理速度。

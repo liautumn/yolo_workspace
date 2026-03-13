@@ -2,7 +2,7 @@ from ultralytics import YOLO
 
 if __name__ == '__main__':
     # Initialize the YOLO model
-    model = YOLO("/home/autumn/桌面/ultralytics/my_workspace/针织/训练/train3/weights/best.pt")
+    model = YOLO(r"")
 
     # Define search space
     search_space = {
@@ -11,7 +11,7 @@ if __name__ == '__main__':
 
     # Tune hyperparameters on COCO8 for 30 epochs
     model.tune(
-        data="/media/autumn/新加卷/zhenzhi/data.yaml",
+        data="",
         epochs=5,
         iterations=300,
         optimizer="AdamW",
@@ -19,6 +19,6 @@ if __name__ == '__main__':
         plots=False,
         save=False,
         val=False,
-        project="针织/调参",
-        name="tune3"
+        project="",
+        name="tune_01"
     )

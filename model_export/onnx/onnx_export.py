@@ -3,7 +3,7 @@ from ultralytics import YOLO
 if __name__ == '__main__':
 
     # Load a model
-    model = YOLO(r"D:\autumn\Documents\GitHub\ultralytics\ultralytics\yolo_workspace\train_output\bird\train\train02\weights\best.pt")  # load an official model
+    model = YOLO(r"yolo11s")  # load an official model
 
     # Export the model
     # ONNX ===> imgsz(h,w), half, dynamic, simplify, opset, batch
