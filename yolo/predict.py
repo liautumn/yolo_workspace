@@ -2,11 +2,11 @@ from ultralytics import YOLO
 
 if __name__ == '__main__':
     # Load a pretrained YOLO11n model
-    model = YOLO(r"")
+    model = YOLO(r"/home/autumn/IdeaProjects/ultralytics/ultralytics/yolo_workspace/train_output/bird/train/train_01/weights/best.pt")
     # Run inference on 'bus.jpg' with arguments
     results = model.predict(
-        source=r"",  # 指定推理的数据源。可以是图像路径、视频文件、目录、URL 或用于实时馈送的设备 ID。
-        conf=0.267,  # 设置检测的最小置信度阈值。如果检测到的对象置信度低于此阈值，则将不予考虑。调整该值有助于减少误报。
+        source=r"/home/autumn/Downloads/bird.yolo/test/images",  # 指定推理的数据源。可以是图像路径、视频文件、目录、URL 或用于实时馈送的设备 ID。
+        conf=0.3,  # 设置检测的最小置信度阈值。如果检测到的对象置信度低于此阈值，则将不予考虑。调整该值有助于减少误报。
         iou=0.5,  # 非最大抑制 (NMS) 的交叉重叠 (IoU) 阈值。较低的数值可以消除重叠的方框，从而减少检测次数，这对减少重复检测非常有用。
         imgsz=640,  # 定义用于推理的图像大小。可以是一个整数（如 320）或一个（高度、宽度）元组。适当调整大小可以提高检测效率、精确度和处理速度。
         half=False,  # 是否启用半精度（FP16）推理，可加快支持的 GPU 上的模型推理速度，同时将对精度的影响降至最低。
@@ -24,8 +24,8 @@ if __name__ == '__main__':
         classes=None,  # 根据一组类别 ID 过滤预测结果。只有属于指定类别的检测结果才会返回。这对于在多类检测任务中集中检测相关对象非常有用。
         retina_masks=False,  # 是否返回高分辨率分割掩码。返回的掩码 (masks.data) 如果启用，将与原始图像大小相匹配。如果禁用，它们将与推理过程中使用的图像大小一致。
         embed=None,  # 指定从中提取特征向量或嵌入的层。这对聚类或相似性搜索等下游任务非常有用。
-        project="../train_output/bird/test",  # 保存预测结果的项目目录名称，如果 `save` 已启用。
-        name=None,  # 预测运行的名称。用于在项目文件夹内创建一个子目录，在 `save` 已启用时存储预测输出结果。
+        project="/home/autumn/IdeaProjects/ultralytics/ultralytics/yolo_workspace/train_output/bird/test",  # 保存预测结果的项目目录名称，如果 `save` 已启用。
+        name="test_01",  # 预测运行的名称。用于在项目文件夹内创建一个子目录，在 `save` 已启用时存储预测输出结果。
 
         # 可视化参数
         show=True,  # 如果为 True，在一个窗口中显示注释的图像或视频。有助于在开发或测试过程中提供即时视觉反馈。
