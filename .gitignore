@@ -1,3 +1,7 @@
 
 /.idea
 *.onnx
+*.pt
+*.bin
+*.xml
+!/train_output/
