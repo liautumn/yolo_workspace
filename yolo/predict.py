@@ -2,10 +2,10 @@ from ultralytics import YOLO
 
 if __name__ == '__main__':
     # Load a pretrained YOLO11n model
-    model = YOLO(r"yolo26n.pt")
+    model = YOLO(r"yolo26s.pt")
     # Run inference on 'bus.jpg' with arguments
     results = model.predict(
-        source=r"/Users/autumn/IdeaProjects/ultralytics/ultralytics/assets/bus.jpg",  # 指定推理的数据源。可以是图像路径、视频文件、目录、URL 或用于实时馈送的设备 ID。
+        source=0,  # 指定推理的数据源。可以是图像路径、视频文件、目录、URL 或用于实时馈送的设备 ID。
         conf=0.3,  # 设置检测的最小置信度阈值。如果检测到的对象置信度低于此阈值，则将不予考虑。调整该值有助于减少误报。
         iou=0.5,  # 非最大抑制 (NMS) 的交叉重叠 (IoU) 阈值。较低的数值可以消除重叠的方框，从而减少检测次数，这对减少重复检测非常有用。
         imgsz=640,  # 定义用于推理的图像大小。可以是一个整数（如 320）或一个（高度、宽度）元组。适当调整大小可以提高检测效率、精确度和处理速度。
@@ -26,10 +26,10 @@ if __name__ == '__main__':
 
         # 可视化参数
         show=True,  # 如果为 True，在一个窗口中显示注释的图像或视频。有助于在开发或测试过程中提供即时视觉反馈。
-        save=True,  # 是否将注释的图像或视频保存到文件中。这对记录、进一步分析或共享结果非常有用。使用 CLI 时默认为 True，在 Python 中使用时默认为 False。
-        save_frames=True,  # 处理视频时，是否将单个帧保存为图像。可用于提取特定帧或进行详细的逐帧分析。
-        save_txt=True, # 是否将检测结果保存在文本文件中，格式为 `[class] [x_center] [y_center] [width] [height] [confidence]`。有助于与其他分析工具集成。
-        save_conf=True,  # 是否在保存的文本文件中包含置信度分数。增强了后期处理和分析的细节。
+        save=False,  # 是否将注释的图像或视频保存到文件中。这对记录、进一步分析或共享结果非常有用。使用 CLI 时默认为 True，在 Python 中使用时默认为 False。
+        save_frames=False,  # 处理视频时，是否将单个帧保存为图像。可用于提取特定帧或进行详细的逐帧分析。
+        save_txt=False, # 是否将检测结果保存在文本文件中，格式为 `[class] [x_center] [y_center] [width] [height] [confidence]`。有助于与其他分析工具集成。
+        save_conf=False,  # 是否在保存的文本文件中包含置信度分数。增强了后期处理和分析的细节。
         save_crop=False,  # 是否保存经过裁剪的检测图像。可用于数据集扩充、分析或创建特定物体的重点数据集。
         show_labels=True,  # 是否在可视输出中显示每次检测的标签。让用户立即了解检测到的物体。
         show_conf=True,  # 是否在标签旁显示每次检测的置信度得分。让人了解模型对每次检测的确定性。
