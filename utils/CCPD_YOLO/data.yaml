@@ -1,0 +1,6 @@
+names:
+  - license_plate
+nc: 1
+train: images/train
+val: images/val
+test: images/test
