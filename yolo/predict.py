@@ -2,15 +2,15 @@ from ultralytics import YOLO
 
 if __name__ == '__main__':
     # Load a pretrained YOLO11n model
-    model = YOLO(r"/Users/autumn/IdeaProjects/ultralytics/ultralytics/yolo_workspace/train_output/tool/train_01/weights/best.pt")
+    model = YOLO(r"yolo26l.pt")
     # Run inference on 'bus.jpg' with arguments
     results = model.predict(
-        source=r"/Users/autumn/IdeaProjects/ultralytics/ultralytics/yolo_workspace/Tool Check.v1i.yolo26/test/images",  # 指定推理的数据源。可以是图像路径、视频文件、目录、URL 或用于实时馈送的设备 ID。
+        source=0,  # 指定推理的数据源。可以是图像路径、视频文件、目录、URL 或用于实时馈送的设备 ID。
         conf=0.3,  # 设置检测的最小置信度阈值。如果检测到的对象置信度低于此阈值，则将不予考虑。调整该值有助于减少误报。
         iou=0.5,  # 非最大抑制 (NMS) 的交叉重叠 (IoU) 阈值。较低的数值可以消除重叠的方框，从而减少检测次数，这对减少重复检测非常有用。
         imgsz=640,  # 定义用于推理的图像大小。可以是一个整数（如 320）或一个（高度、宽度）元组。适当调整大小可以提高检测效率、精确度和处理速度。
         half=False,  # 是否启用半精度（FP16）推理，可加快支持的 GPU 上的模型推理速度，同时将对精度的影响降至最低。
-        device='cpu',  # 指定用于推理的设备（例如：`cpu`, `cuda:0` 或 `0`）。允许用户选择 CPU、特定 GPU 或其他计算设备执行模型。
+        device='cuda:0',  # 指定用于推理的设备（例如：`cpu`, `cuda:0` 或 `0`）。允许用户选择 CPU、特定 GPU 或其他计算设备执行模型。
         batch=1,  # 指定推理的批量大小（仅当来源为目录、视频文件或 .txt 文件）。更大的批次规模可以提供更高的吞吐量，缩短推理所需的总时间。
         max_det=300,  # 每幅图像允许的最大检测次数。限制模型在单次推理中可以检测到的物体总数，防止在密集场景中产生过多的输出。
         vid_stride=1,  # 视频输入的帧间距。允许跳过视频中的帧，以加快处理速度，但会牺牲时间分辨率。数值为 1 时会处理每一帧，数值越大越跳帧。
