@@ -2,7 +2,7 @@ from ultralytics import YOLO
 
 if __name__ == '__main__':
     # Load a model
-    model = YOLO("yolo26lpt")
+    model = YOLO("yolo26l.pt")
 
     # Train the model
     model.train(
